@@ -26,20 +26,23 @@
 #путём долгого всматривания в задачу, мне пришло озарение! 
 # этож факториал!))
 # решение не очень пайтоновское
-factorial = int(input('If you want to know \
-Factorial(N), pls input your number here: '))
-if factorial == 0:
-    print(factorial + 1)
-else:
-    count = 1
-    n = 1
-    while count < factorial+1:
-        n = n * count
-        count = count + 1
-        print (n)
-    print(f'{factorial}! = {n}')
-#решение чуть более пайтоновское
-# num = int(input ("dd "))
-# for dig in range (1, num+1):
-#     dig *= dig
-#     print (dig)
+# factorial = int(input('If you want to know \
+# Factorial(N), pls input your integer number here: '))
+# if factorial == 0:
+#     print(factorial + 1)
+# else:
+#     count = 1
+#     n = 1
+#     while count < factorial+1:
+#         n = n * count
+#         count = count + 1
+#         print (n)
+#     print(f'{factorial}! = {n}')
+
+# решение чуть более пайтоновское но без проверок и методов
+# простите за лень
+num = int(input ("dd "))
+n = 1
+for dig in range (1, num+1):
+    n = n*dig
+    print (n)
