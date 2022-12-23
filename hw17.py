@@ -1,3 +1,4 @@
+import random
 # Задача 1. Напишите программу, которая принимает на вход вещественное
 # число и показывает сумму его цифр.
 # Пример:
@@ -112,4 +113,12 @@ mult_pos = (new_list[first_pos-1])*(new_list[second_pos-1])
 
 print (f'your list is {new_list}\nAnd the product of numbers on "{first_pos}" and "{second_pos}" positions is "{mult_pos}"')
 
+# Задача 5. Реализуйте алгоритм перемешивания списка без шафл
+#список я взял из задачи 4
 
+
+for num in range(len(new_list)):
+    i = random.randint(0, len(new_list)-1)
+    new_list[i], new_list[num] = new_list[num], new_list[i]
+
+print (f'This is new shuffled list {new_list}')
