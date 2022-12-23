@@ -39,31 +39,47 @@
 #         print (n)
 #     print(f'{factorial}! = {n}')
 
-def factorial_finder (input_factorial):
-    if input_factorial == 0:
-        print ("All right megabrain your F(n):")
-        return input_factorial + 1
-    else:
-        count = 1
-        n = 1
-        while count < input_factorial+1:
-            n = n * count
-            count = count + 1
-            print (f'{count-1}! = {n}')
-        return n
+# def factorial_finder (input_factorial):
+#     if input_factorial == 0:
+#         print ("All right megabrain your F(n):")
+#         return input_factorial + 1
+#     else:
+#         count = 1
+#         n = 1
+#         while count < input_factorial+1:
+#             n = n * count
+#             count = count + 1
+#             print (f'{count-1}! = {n}')
+#         return n
 
-factorial = input('If you want to know \
-Factorial(N), pls input your integer number which is GREATER than ZERO  here: ')
-if factorial.isdigit()==True:
-    factorial = int(factorial)
-    print(f'So, you want to know {factorial}! and it\'s {factorial_finder(factorial)}')
-else:
-    print ("I was asking you to input INTEGER number MORE than zero, sorry, but you have to do it again")
+# factorial = input('If you want to know \
+# Factorial(N), pls input your integer number which is GREATER than ZERO  here: ')
+# if factorial.isdigit()==True:
+#     factorial = int(factorial)
+#     print(f'So, you want to know {factorial}! and it\'s {factorial_finder(factorial)}')
+# else:
+#     print ("I was asking you to input INTEGER number MORE than zero, sorry, but you have to do it again")
 
-# решение чуть более пайтоновское но без проверок и методов
+# решение 2й. чуть более пайтоновское, но без проверок и методов
 # простите за лень
+
 # num = int(input ("input your integer number here: "))
 # n = 1
 # for dig in range (1, num+1):
 #     n = n*dig
 #     print (n)
+
+#Задача 3. Задайте список из n чисел заполненый по формуле 
+# (1+ 1/n)**n и выведите на экран их сумму.
+# Пример:
+# - Для n = 6: [2,2,2,2,2,3] -> 13
+
+def make_my_list(user_num):
+    my_list = []
+    for num in range(1, user_num+1):
+        my_list.append(round((1+1/num)**num))
+    return my_list
+    
+user_input = int(input('Pls, input integer and positive number that will be lenght of your list here: '))
+print (f"Your own list is {make_my_list(user_input)}, and the sum of the elements is '{sum(make_my_list(user_input))}'")
+
