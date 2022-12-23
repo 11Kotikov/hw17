@@ -58,7 +58,7 @@
 #     factorial = int(factorial)
 #     print(f'So, you want to know {factorial}! and it\'s {factorial_finder(factorial)}')
 # else:
-#     print ("I was asking you to input INTEGER number MORE than zero, sorry, but you have to do it again")
+#     print ("I was asking you to input INTEGER number MORE than zero, sorry, but you have to run the programe again")
 
 # решение 2й. чуть более пайтоновское, но без проверок и методов
 # простите за лень
@@ -74,12 +74,42 @@
 # Пример:
 # - Для n = 6: [2,2,2,2,2,3] -> 13
 
+# def make_my_list(user_num):
+#     my_list = []
+#     for num in range(1, user_num+1):
+#         my_list.append(round((1+1/num)**num))
+#     return my_list
+    
+# user_input = int(input('Pls, input integer and positive number that will be lenght of your list here: '))
+# print (f"Your own list is {make_my_list(user_input)}, and the sum of the elements is '{sum(make_my_list(user_input))}'")
+
+# Задача 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N]. 
+# Найдите произведение элементов на указанных позициях(не индексах, получается). Позиции хранятся в файле file.txt 
+# в одной строке одно число.
+
 def make_my_list(user_num):
     my_list = []
-    for num in range(1, user_num+1):
-        my_list.append(round((1+1/num)**num))
+    for num in range(-user_num, user_num+1):
+        my_list.append(num)
     return my_list
+
+with open ('file.txt', 'w') as data:
+    data.write ('1\n')
+    data.write ('3\n')
     
-user_input = int(input('Pls, input integer and positive number that will be lenght of your list here: '))
-print (f"Your own list is {make_my_list(user_input)}, and the sum of the elements is '{sum(make_my_list(user_input))}'")
+my_file = open('file.txt','r')
+first_pos = int(my_file.readline())
+second_pos = int(my_file.readline(2))
+my_file.close
+
+user_input = input('Input integer number, whatever you want, here: ')
+if user_input.isdigit()==True:
+    user_input = int(user_input)
+    new_list = make_my_list (user_input)
+else:
+    print ("I was asking you to input INTEGER number, sorry, but you have to run the programe again")
+mult_pos = (new_list[first_pos-1])*(new_list[second_pos-1])
+
+print (f'your list is {new_list}\nAnd the product of numbers on "{first_pos}" and "{second_pos}" positions is "{mult_pos}"')
+
 
